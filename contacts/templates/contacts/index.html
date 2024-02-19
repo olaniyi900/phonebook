@@ -1,10 +1,12 @@
 {% extends "contacts/base.html" %}
 
 {% block content %}
-<h3 class="light-blue-text darken-4">Contacts </h3>
+<h3 class="light-blue-text darken-4 center-align">CONTACTS</h3>
 <div class="collection">
     {% for contact in contacts %}
-    <a href="#!" class="collection-item light-blue-text darken-4">{{ contact.first_name }} {{ contact.last_name }}</a>
+    <a href="{% url 'contacts:contact' contact.id %}" class="collection-item light-blue-text darken-4">{{ contact.first_name }} {{ contact.last_name }}
+        
+    </a>
     {% endfor %}
    
   </div>

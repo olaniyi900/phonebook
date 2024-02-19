@@ -12,9 +12,9 @@
 <body>
     <nav class="light-blue darken-4">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo right"><i class="medium material-icons">book</i></a>
+          <a href="{% url 'contacts:index' %}" class="brand-logo right"><i class="medium material-icons">book</i></a>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
+            <li><a href="{% url 'contacts:index' %}">Home</a></li>
             <li><a href="badges.html">Components</a></li>
             <li><a href="collapsible.html">JavaScript</a></li>
           </ul>
@@ -25,7 +25,7 @@
         {% block content %}{% endblock content %}
       </div>
 
-      <footer class="page-footer light-blue darken-4 m-3">
+      <footer class="page-footer light-blue darken-4 m-3" style="margin-top:15px;">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">

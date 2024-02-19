@@ -7,5 +7,8 @@ class PersonContact(models.Model):
     email = models.EmailField()
     date_of_birth = models.DateField()
 
+    class Meta:
+        ordering = ['first_name']
+
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'

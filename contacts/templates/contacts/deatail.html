@@ -1,0 +1,20 @@
+{% extends "contacts/base.html" %}
+
+{% block content %}
+<div class="center-align" style="padding:20px; margin-bottom: 150px;">
+    <div class="col s12 m6">
+      <div class="card blue darken-1">
+        <div class="card-content white-text">
+          <h3 class="card-title">{{ contact.first_name }} {{ contact.last_name }}</h3>
+          <p>Phone Number: {{contact.phone_number}}</p>
+          <p>Email: {{contact.email}}</p>
+          <p>Date Of Birth: {{contact.date_of_birth}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn blue">Update<i class="material-icons left">create</i></a>
+          <a href="#" class="btn red">Delete<i class="material-icons left">delete</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
