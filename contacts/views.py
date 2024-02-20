@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 from .models import PersonContact
 
 # Create your views here.
@@ -17,3 +18,8 @@ class ContactDetailView(DetailView):
     model = PersonContact
     context_object_name = "contact"
     template_name = "contacts/deatail.html"
+
+class ContactCreateView(CreateView):
+    model = PersonContact
+    template_name = 'contacts/form.html'
+    fields = '__all__'
