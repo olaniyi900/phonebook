@@ -15,5 +15,5 @@ class PersonContact(models.Model):
         return f'{self.first_name} {self.last_name}'
     
     def get_absolute_url(self):
-        return reverse("contatcs:contact", kwargs={"pk": self.pk})
+        return reverse("contacts:contact", kwargs={"pk": self.pk})
     

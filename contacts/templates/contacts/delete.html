@@ -1,0 +1,12 @@
+{% extends "contacts/base.html" %}
+
+{% block content %}
+    <form class="col s12" action="" method="POST">
+        {% csrf_token %}
+        
+            
+        <p>Are you sure you want to delete "{{ contact }}"?</p>
+        <button class="btn blue" type="submit">Confirm</button>
+        <a href="{% url "contacts:contact" object.id %}" class="btn grey" type="submit">Cancel</a>
+    </form>
+{% endblock content %}

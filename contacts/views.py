@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import PersonContact
+from django.urls import reverse_lazy
 
 # Create your views here.
 # def index(request):
@@ -23,3 +24,15 @@ class ContactCreateView(CreateView):
     model = PersonContact
     template_name = 'contacts/form.html'
     fields = '__all__'
+
+class ContactUpdateView(UpdateView):
+    model = PersonContact
+    template_name = 'contacts/form.html'
+    fields = '__all__'
+
+
+class ContactDeleteView(DeleteView):
+    model = PersonContact
+    context_object_name = "contact"
+    template_name = 'contacts/delete.html'
+    success_url = reverse_lazy('contacts:index')
