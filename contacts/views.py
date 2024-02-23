@@ -4,9 +4,16 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import PersonContact
 from django.urls import reverse_lazy
 
-# Create your views here.
-# def index(request):
-#     return render(request, 'contacts/index.html')
+
+# api import
+
+from rest_framework import viewsets
+from .serializers import PersonContactSerializer
+
+class PersonContactViewset(viewsets.ModelViewSet):
+    queryset = PersonContact.objects.all()
+    serializer_class = PersonContactSerializer
+    
 
 class ContactListView(ListView):
     model = PersonContact
